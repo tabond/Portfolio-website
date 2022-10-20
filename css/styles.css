@@ -1,0 +1,427 @@
+
+/*colours i want to use 
+Text colour blues and yellow inviyting and professional 
+Primary colour blue
+Secondary colour yellow
+ */
+:root{
+  --primary-color: rgba(0, 91, 238, 0.657);
+  --secondary-color:  rgb(255, 230, 0);
+  --selector-background-color:  #357b70;
+  --button-colour-change:purple; 
+  --sunrise-one: #edc655;
+  --sunrise-two:#fcffad;
+  --sunrise-three:#f76414;
+  --nav-text-change: whitesmoke;
+  --nav-change-background: #000000;
+}
+body{
+    background: var(--primary-color);
+    /*background-image: linear-gradient(rgb(133, 141, 139), rgb(24,196,149));*/
+    /*background-image: conic-gradient(rgb(194, 127, 4),rgb(2, 223, 25), rgb(213, 3, 213));*/
+    font-family: 'Silkscreen', cursive;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 15px;
+  color: var(--nav-text-change)
+}
+h1 {
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+    
+  a:visited {
+    /*colour link changes too after clicking*/
+    color: var(--selector-background-color);
+  }
+  
+/*how to change the position of elements use top and direction*/
+.navigation__logo {
+  position:absolute;
+  max-width: 100%;
+  height: auto;
+  
+}
+.page-header{
+  display: flex;
+ height: 100%;
+  padding: 0px;
+}
+.page-header__item{
+  flex:1 1 10px
+}
+.page-header__item:last-child {
+  flex-grow: 1px;
+  text-align: right;
+}
+
+  .navigation-list{
+    list-style:none;
+    font-size: 18px;
+    display:inline-flex;
+  }
+ /* to re align items within a class*/
+  .navigation-list li{
+   display: inline-block;
+   margin: left 15px;
+  }
+  a {/* element selector*/ 
+    color: var(--secondary-color);
+  }
+  
+/*Effect 20: 3D side*/
+nav a 
+ {
+	position: relative;
+	display: inline-block;
+	margin: 5px 5px;
+	outline: none;
+	color: var(--secondary-color);
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+	font-size: 1.35em;
+}
+
+.navigation-list a {
+	line-height: 1em;
+	perspective: 800px;
+	text-align: center;
+  display:inline-block;
+}
+
+.navigation-list a span {
+	position: relative;
+	display: inline-block;
+	padding: 3px 5px 0;
+	box-shadow: inset 0 3px var(--secondary-color);
+/*	transform-origin: 50% 0;
+	transform-style: preserve-3d;
+	transform-origin: 0% 50%;*/
+}
+
+.navigation-list a ::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--nav-change-background);
+	color: var(--nav-text-change);
+	content: attr(data-hover);
+	transform: rotateX(270deg);
+	transition: transform 0.6s;
+	transform-origin: 0 0;
+	pointer-events: none;
+}
+
+.navigation-list a:hover span,
+.navigation-list a:focus span {
+	background: var(--selector-background-color);
+}
+
+.main-navigation a:hover ::before,
+.main-navigation a:focus ::after{	
+	transform: rotateX(1deg);
+}
+
+.navigation-list__item--active {
+  text-decoration: none;
+  color:var(--button-colour-change);
+}
+  
+  p{
+  padding: 0px;
+  margin: 1 auto;
+  text-align: center;
+
+}
+.contact-main{
+  text-align: center;
+}
+table{
+  padding: 10px;
+  margin: auto;
+  border: 10px solid var(--primary-color);
+  background-color: var(--primary-color);
+  text-align: center;
+}
+.article {
+  display: block;
+}
+
+.article__graphic--inline {
+  display: inline-block;
+}
+
+.profile__portrait{
+  float:left;
+  width: 40%;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+/*not working*/
+
+.profile {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10%;
+}
+/*"*" is the universal html selector apllies to all*/
+* {
+  box-sizing: border-box;
+}
+/*to  prevent the page footer being effected by the float image*/
+.page__footer{
+  clear: both;
+  display:flex;
+  padding:40px;
+  margin: 10px -15px;
+  border: 0px solid var(--primary-color);
+  background-color: var(--primary-color);
+  text-align: center;
+  flex-direction: column;
+}
+  @media all and (max-width: 500px) {
+    .grid{
+      display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    }
+    .grid__item{
+      background-color: var(--primary-color);
+    padding: 10px;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    .grid__item:last-child {
+      grid-column: auto / auto;
+      grid-row: auto / auto;
+    }
+      }
+      @media all and (min-width: 500px) and (max-width: 750px) {
+        .grid{
+          display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        /*only need to specify oneof the two to make the grid more flexible
+        grid-template-rows: 300px 300px;*/
+        }
+        .grid__item{
+          background-color: var(--primary-color);
+        padding: 10px;
+        }
+        h2 {
+          font-size: 22px;
+        }
+        .grid__item:last-child {
+          grid-column: auto / auto;
+          grid-row: auto / auto;
+        }
+      }
+      @media all and (max-width: 500px){
+        .grid{
+          display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        }
+        .grid__item{
+          background-color: var(--primary-color);
+        padding: 10px;
+        }
+        h2 {
+          font-size: 22px;
+        }
+        .grid__item:last-child {
+          grid-column: auto / auto;
+          grid-row: auto / auto;
+        }
+      }
+  @media all and (min-width: 750px) and (max-width: 1500px) {
+    .grid{
+      display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    /*only need to specify oneof the two to make the grid more flexible
+    grid-template-rows: 300px 300px;*/
+    }
+    .grid__item{
+      background-color: var(--primary-color);
+    padding: 10px;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    .grid__item:last-child {
+      grid-column: auto / auto;
+      grid-row: auto / auto;
+    }
+  }
+  .button {
+      /* overwrites browser defaults and resets the border */
+    border: none;
+    display: inline-block;
+    /* takes the font from the outer container.
+     is this needed as this is explicit for the body elements?*/
+  font-family: inherit;
+  background-color: var(--selector-background-color);
+  color:var(--secondary-color);
+  text-decoration: none;
+  padding: 10px;
+  margin:5px;
+  border-radius: 50px;
+  /* width of the border, type, color */
+  border-bottom: 3px solid var(--nav-change-background);
+  /* can combine 
+  transition-duration: 1.5s;
+  transition-property: opacity;*/
+  transition: 1.5s opacity;
+}
+  .button:hover,
+  .button:focus {
+   /* lets the mouse appear as a hand when hovering over the button */
+   cursor: pointer;
+   /* reduces the opacity of the button to 80% colours purple*/
+   background-color: var(--button-colour-change);
+   opacity: 0.5;
+  }
+ 
+  .about-list{
+    list-style: none;
+    text-align: center;
+     padding: 10px;
+  }
+  .button{
+   position:relative;
+   top: 50%;
+   left: 50%;
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+  }
+  @keyframes color-change {
+    /*from = 0% to = 100% 
+    from {
+      fill: #edc655;
+    }
+    to {
+      fill: #f76414;
+    }*/
+    0% {
+      fill: var(--sunrise-one);
+    }
+    50% {
+      fill: var(--sunrise-two);
+    }
+    100% {
+      fill: var(--sunrise-three);
+    }
+  }
+  .sun{
+    /*= to the single line order
+    animation-duration: 3s;
+    animation-name: color-change;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;*/
+    animation: 3s color-change infinite alternate linear;
+  }
+  @keyframes move-cloud{
+    from {
+      transform: translate(0, 50px);
+    }
+    50%{
+      transform: rotate(10deg);
+    }
+    to {
+      transform: translate(200px, 50px);
+    }
+  }
+
+  .cloud-front{
+    animation-duration: 5s;
+    animation-name: move-cloud;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+  }
+  /*Or the short way:
+  .cloud-front {
+    animation: 3s cloud-move infinite alternate linear;*/
+    @keyframes move-cloud-reverse {
+      0% {
+        transform: translate(446px, 48px);
+      }
+50%{
+  transform: rotate(30deg);
+}
+      100% {
+        transform: translate(100px, 48px);
+      }
+    }
+    .cloud-back {
+      animation: 5s move-cloud-reverse infinite alternate linear;
+    }
+
+
+
+
+
+
+
+
+
+
+
+     /* Old Code from previous exercise using a html Button
+  button {
+    /* overwrites browser defaults and resets the border 
+    border: none;
+    /* takes the font from the outer container 
+    font-family: inherit;
+    /* styles the background color, font color, and text decoration (underline, etc.) of the button 
+    background-color: var(--selector-background-color);
+    text-decoration: none;
+    /*adds spacing to the button (this will be discussed more in-depth later) 
+    padding: 7px;
+    border-radius: 900px;
+    /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format 
+    border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+  }
+  button:hover, button:focus {
+    /* lets the mouse appear as a hand when hovering over the button 
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% 
+    opacity: 0.8;
+  }
+.button__secondary {
+    background-color: var(--secondary-color);
+    color: #2b2b2b;
+}*/
+/*#my-link { id selector 
+    color: green;  
+  }
+  
+  .my-link { class selector 
+    color: blue;  
+  }
+  */
+  /* 
+  a:hover, a:focus {
+  No underlining when hovering over a link 
+    text-decoration: none;
+  }
+  */

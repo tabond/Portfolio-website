@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <!--meta data-->
+  <head>
+    <meta charset="utf-8" />
+    <title>Tom's Creations</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./img/favicon.png"
+      sizes="32x32"
+      class="navigation__logo"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/style.production.css" />
+  </head>
+  <!--main body of page-->
+  <body>
+    <!--page navigation links and logo-->
+    <header class="page-header">
+      <p>
+        <a href="Index.html" role="menuitem" class="navigation-list__item"
+          ><img
+            src="./img/favicon.png"
+            alt="Tom's Creations Favicon"
+            class="page-header___item navigation__logo"
+          />
+        </a>
+      </p>
+      <nav class="main-navigation page-header__item">
+        <ul role="menubar" class="navigation-list">
+          <li role="presentation">
+            <a href="Index.html" role="menuitem"  class="navigation-list__item"
+        ><span data-hover="Home">Home</spnan></a
+      >
+          </li>
+          <li role="presentation">
+            <a
+              href="about.html"
+              role="menuitem"
+              class="navigation-list__item"
+              ><span data-hover="About"Contact>About</span></a
+            >
+          </li>
+          <li role="presentation">
+            <a href="contact.html" role="menuitem" class="navigation-list__item navigation-list__item--active"
+              ><span data-hover="Contact"Contact>Contact</span></a
+            >
+          </li>
+          <li role="presentation">
+            <a href="work.html" role="menuitem" class="navigation-list__item"
+              ><span data-hover="Work"Contact>Work</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="contact-main">
+      <h1>Contact</h1>
+      <section>
+        Where you can find me:<br/>
+        Planet Earth<br />
+        The milky way<br />
+        2022<br />
+        Tel <a href=":+442367772964">+44 2367772964</a><br />
+        <a href="mailto:tabond23@gmail.com">tabond23@gmail.com</a><br />
+        <a href="mailto:office@careerfoundry.com">Contact me</a>
+      </section>
+      <!--not to sure about how to creat a URL to display the input data to the form-->
+      <h2>Lets stay in touch!!</h2>
+      <form action="/visitor-detail.php" method="post" id="contact-form">
+        <label class="standard-label" for="contact-first-name"
+          >First name:</label
+        >
+        <input
+          type="text"
+          id="contact-first-name"
+          name="fname"
+          placeholder="Michael"
+          required
+        /></br>
+        <label class="standard-label" for="contact-last-name">Last name:</label>
+        <input
+          type="text"
+          id="contact-last-name"
+          name="fname"
+          placeholder="Jackson"
+          required
+        /><br />
+
+        <label class="standard-label" for="contact-email">Email:</label>
+        <input
+          type="text"
+          id="contact-email"
+          name="email"
+          placeholder="m.jackson@mail.com"
+          required
+          pattern="@"
+        /><br />
+
+        <label class="standard-label" for="contact-tel">Tel:</label>
+        <input
+          type="text"
+          id="contact-tel"
+          name="tel"
+          placeholder="012345678"
+        /><br /><br />
+        <label
+          class="standard-label"
+          for="message-box"
+          placeholder="If the universe is expanding are we too?"
+          >Tell me a bit about yourself, ask me anything!:</label
+        ><br />
+        <textarea
+          id="message-box"
+          maxlength="240"
+          name="msg"
+          cols="30"
+          rows="10"
+        ></textarea
+        ><br />
+        <input type="submit" value="Submit" />
+      </form>
+    </main>
+
+    <!--contact details linked to images-->
+    <footer class="page__footer">
+      <h2>Let's get sociable</h2>
+      <div class="social-media">
+        <a href="tabond23@gmail.com"
+          ><img
+            src="./Img/gmail.svg"
+            alt="tabond23@gmail.com"
+            style="width: 35px; height: 35px"
+        /></a>
+
+        <a href="https://www.linkedin.com/in/thomasabond/" target="_blank"
+          ><img
+            src="./Img/linkedin.svg"
+            alt="LinkedIn"
+            style="width: 35px; height: 35px"
+        /></a>
+
+        <a href="https://github.com/tabond" target="_blank"
+          ><img
+            src="./Img/github.svg"
+            alt="Github"
+            style="width: 35px; height: 35px"
+        /></a>
+      </div>
+    </footer>
+    <script src="js/tota11y.min.js"></script>
+  </body>
+</html>
