@@ -14,6 +14,9 @@ Secondary colour yellow
   --sunrise-three:#f76414;
   --nav-text-change: whitesmoke;
   --nav-change-background: #000000;
+  --grid-padding: 15px;
+  --grid-gap:15px;
+  --grid-border-radius:50px;
 }
 body{
     background: var(--primary-color);
@@ -34,6 +37,7 @@ h1 {
   h2 {
     font-size: 24px;
     font-weight: 700;
+    text-align: center;
   }
   h3 {
     font-size: 18px;
@@ -48,8 +52,7 @@ h1 {
 /*how to change the position of elements use top and direction*/
 .navigation__logo {
   position:absolute;
-  max-width: 100%;
-  height: auto;
+  width: 20%;
   
 }
 .page-header{
@@ -68,7 +71,7 @@ h1 {
   .navigation-list{
     list-style:none;
     font-size: 18px;
-    display:inline-flex;
+    float:right;
   }
  /* to re align items within a class*/
   .navigation-list li{
@@ -164,10 +167,14 @@ table{
 .article__graphic--inline {
   display: inline-block;
 }
+.intro-web{
+  background-color: var(--selector-background-color);
+  color: var(--secondary-color)
+}
 
 .profile__portrait{
   float:left;
-  width: 40%;
+  width: 50%;
   border-radius: 50%;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -199,14 +206,12 @@ table{
     .grid{
       display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap:var(--grid-gap);
     }
     .grid__item{
       background-color: var(--primary-color);
-    padding: 10px;
-    }
-    h2 {
-      font-size: 22px;
+    padding: var(--grid-padding);
+    border-radius: var(--grid-border-radius);
     }
     .grid__item:last-child {
       grid-column: auto / auto;
@@ -217,17 +222,13 @@ table{
         .grid{
           display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        /*only need to specify oneof the two to make the grid more flexible
-        grid-template-rows: 300px 300px;*/
-        }
-        .grid__item{
-          background-color: var(--primary-color);
-        padding: 10px;
-        }
-        h2 {
-          font-size: 22px;
-        }
+        gap:var(--grid-gap);
+      }
+      .grid__item{
+        background-color: var(--primary-color);
+      padding: var(--grid-padding);
+      border-radius: var(--grid-border-radius);
+      }
         .grid__item:last-child {
           grid-column: auto / auto;
           grid-row: auto / auto;
@@ -237,15 +238,13 @@ table{
         .grid{
           display: grid;
         grid-template-columns: 1fr;
-        gap: 10px;
-        }
-        .grid__item{
-          background-color: var(--primary-color);
-        padding: 10px;
-        }
-        h2 {
-          font-size: 22px;
-        }
+        gap:var(--grid-gap);
+      }
+      .grid__item{
+        background-color: var(--primary-color);
+      padding: var(--grid-padding);
+      border-radius: var(--grid-border-radius);
+      }
         .grid__item:last-child {
           grid-column: auto / auto;
           grid-row: auto / auto;
@@ -255,22 +254,19 @@ table{
     .grid{
       display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    /*only need to specify oneof the two to make the grid more flexible
-    grid-template-rows: 300px 300px;*/
-    }
-    .grid__item{
-      background-color: var(--primary-color);
-    padding: 10px;
-    }
-    h2 {
-      font-size: 22px;
-    }
+    gap:var(--grid-gap)
+  }
+  .grid__item{
+    background-color: var(--primary-color);
+  padding: var(--grid-padding);
+  border-radius: var(--grid-border-radius);
+  }
     .grid__item:last-child {
       grid-column: auto / auto;
       grid-row: auto / auto;
     }
   }
+
   .button {
       /* overwrites browser defaults and resets the border */
     border: none;
@@ -281,6 +277,7 @@ table{
   background-color: var(--selector-background-color);
   color:var(--secondary-color);
   text-decoration: none;
+  text-align: center;
   padding: 10px;
   margin:5px;
   border-radius: 50px;
