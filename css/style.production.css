@@ -1,11 +1,27 @@
 /*paste Auto prefixer output here*/
-/*colours i want to use 
-Text colour blues and yellow inviyting and professional 
-Primary colour blue
-Secondary colour yellow
- */
- body{
-    background: rgba(0, 91, 238, 0.657);
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+:root{
+  --primary-color: rgba(0, 91, 238, 0.657);
+  --secondary-color:  rgb(255, 230, 0);
+  --selector-background-color:  #357b70;
+  --button-colour-change:purple; 
+  --sunrise-one: #edc655;
+  --sunrise-two:#fcffad;
+  --sunrise-three:#f76414;
+  --nav-text-change: whitesmoke;
+  --nav-change-background: #000000;
+  --grid-padding: 15px;
+  --grid-gap:15px;
+  --grid-border-radius:50px;
+}
+body{
+    background: var(--primary-color);
     /*background-image: linear-gradient(rgb(133, 141, 139), rgb(24,196,149));*/
     /*background-image: conic-gradient(rgb(194, 127, 4),rgb(2, 223, 25), rgb(213, 3, 213));*/
     font-family: 'Silkscreen', cursive;
@@ -13,7 +29,7 @@ Secondary colour yellow
   font-size: 16px;
   line-height: 1.6;
   margin: 10px 15px;
-  color: whitesmoke
+  color: var(--nav-text-change)
 }
 h1 {
     font-size: 40px;
@@ -23,23 +39,23 @@ h1 {
   h2 {
     font-size: 24px;
     font-weight: 700;
+    text-align: center;
   }
   h3 {
     font-size: 18px;
     font-weight: 700;
+    text-align: center;
   }
     
   a:visited {
     /*colour link changes too after clicking*/
-    color: #357b70;
+    color: var(--selector-background-color);
   }
   
 /*how to change the position of elements use top and direction*/
 .navigation__logo {
   position:absolute;
-  max-width: 100%;
-  height: auto;
-  
+  width: 10%;
 }
 .page-header{
   display: -webkit-box;
@@ -47,33 +63,32 @@ h1 {
   display: flex;
  height: 100%;
   padding: 0px;
+  
+}
+.standard-label{
+  text-align: left;
+
 }
 .page-header__item{
   -webkit-box-flex:1;
       -ms-flex:1 1 10px;
-          flex:1 1 10px
+          flex:1 1 10px;
+  margin-left: 10%;
 }
 .page-header__item:last-child {
-  -webkit-box-flex: 1px;
-      -ms-flex-positive: 1px;
-          flex-grow: 1px;
   text-align: right;
 }
-
   .navigation-list{
     list-style:none;
     font-size: 18px;
-    display:-webkit-inline-box;
-    display:-ms-inline-flexbox;
-    display:inline-flex;
+    float:right;
   }
  /* to re align items within a class*/
   .navigation-list li{
    display: inline-block;
-   margin: left 15px;
   }
   a {/* element selector*/ 
-    color: rgb(255, 230, 0);
+    color: var(--secondary-color);
   }
   
 /*Effect 20: 3D side*/
@@ -83,7 +98,7 @@ nav a
 	display: inline-block;
 	margin: 5px 5px;
 	outline: none;
-	color: rgb(255, 230, 0);
+	color: var(--secondary-color);
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -103,21 +118,20 @@ nav a
 	position: relative;
 	display: inline-block;
 	padding: 3px 5px 0;
-	-webkit-box-shadow: inset 0 3px rgb(255, 230, 0);
-	        box-shadow: inset 0 3px rgb(255, 230, 0);
+	-webkit-box-shadow: inset 0 3px var(--secondary-color);
+	        box-shadow: inset 0 3px var(--secondary-color);
 /*	transform-origin: 50% 0;
 	transform-style: preserve-3d;
 	transform-origin: 0% 50%;*/
 }
-
 .navigation-list a ::before {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #000000;
-	color: whitesmoke;
+	background: var(--nav-change-background);
+	color: var(--nav-text-change);
 	content: attr(data-hover);
 	-webkit-transform: rotateX(270deg);
 	        transform: rotateX(270deg);
@@ -132,12 +146,9 @@ nav a
 	pointer-events: none;
 }
 
-.navigation-list a:hover span {
-	background: #357b70;
-}
-
+.navigation-list a:hover span,
 .navigation-list a:focus span {
-	background: #357b70;
+	background: var(--selector-background-color);
 }
 
 .main-navigation a:hover ::before,
@@ -148,23 +159,32 @@ nav a
 
 .navigation-list__item--active {
   text-decoration: none;
-  color:purple;
+  color:var(--button-colour-change);
 }
   
   p{
   padding: 0px;
-  margin: 1 auto;
-  text-align: center;
-
+  margin-left: 10px;
+  text-align: left;
+  text-indent: 30px;
 }
 .contact-main{
   text-align: center;
 }
+
+#contact-form{
+  text-align: right;
+  padding-right: 20%;
+}
+.message-box-label{
+text-align: center;
+}
+
 table{
   padding: 10px;
   margin: auto;
-  border: 10px solid rgba(0, 91, 238, 0.657);
-  background-color: rgba(0, 91, 238, 0.657);
+  border: 10px solid var(--primary-color);
+  background-color: var(--primary-color);
   text-align: center;
 }
 .article {
@@ -174,10 +194,14 @@ table{
 .article__graphic--inline {
   display: inline-block;
 }
+.intro-web{
+  background-color: var(--selector-background-color);
+  color: var(--secondary-color)
+}
 
 .profile__portrait{
   float:left;
-  width: 40%;
+  width: 50%;
   border-radius: 50%;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -203,8 +227,8 @@ table{
   display:flex;
   padding:40px;
   margin: 10px -15px;
-  border: 0px solid rgba(0, 91, 238, 0.657);
-  background-color: rgba(0, 91, 238, 0.657);
+  border: 0px solid var(--primary-color);
+  background-color: var(--primary-color);
   text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -217,14 +241,12 @@ table{
       display: grid;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap:var(--grid-gap);
     }
     .grid__item{
-      background-color: rgba(0, 91, 238, 0.657);
-    padding: 10px;
-    }
-    h2 {
-      font-size: 22px;
+      background-color: var(--primary-color);
+    padding: var(--grid-padding);
+    border-radius: var(--grid-border-radius);
     }
     .grid__item:last-child {
       grid-column: auto / auto;
@@ -235,19 +257,15 @@ table{
         .grid{
           display: -ms-grid;
           display: grid;
-        -ms-grid-columns: 1fr 10px 1fr;
+        -ms-grid-columns: 1fr var(--grid-gap) 1fr;
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        /*only need to specify oneof the two to make the grid more flexible
-        grid-template-rows: 300px 300px;*/
-        }
-        .grid__item{
-          background-color: rgba(0, 91, 238, 0.657);
-        padding: 10px;
-        }
-        h2 {
-          font-size: 22px;
-        }
+        gap:var(--grid-gap);
+      }
+      .grid__item{
+        background-color: var(--primary-color);
+      padding: var(--grid-padding);
+      border-radius: var(--grid-border-radius);
+      }
         .grid__item:last-child {
           grid-column: auto / auto;
           grid-row: auto / auto;
@@ -259,15 +277,13 @@ table{
           display: grid;
         -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-        gap: 10px;
-        }
-        .grid__item{
-          background-color: rgba(0, 91, 238, 0.657);
-        padding: 10px;
-        }
-        h2 {
-          font-size: 22px;
-        }
+        gap:var(--grid-gap);
+      }
+      .grid__item{
+        background-color: var(--primary-color);
+      padding: var(--grid-padding);
+      border-radius: var(--grid-border-radius);
+      }
         .grid__item:last-child {
           grid-column: auto / auto;
           grid-row: auto / auto;
@@ -277,24 +293,21 @@ table{
     .grid{
       display: -ms-grid;
       display: grid;
-    -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
+    -ms-grid-columns: 1fr var(--grid-gap) 1fr var(--grid-gap) 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    /*only need to specify oneof the two to make the grid more flexible
-    grid-template-rows: 300px 300px;*/
-    }
-    .grid__item{
-      background-color: rgba(0, 91, 238, 0.657);
-    padding: 10px;
-    }
-    h2 {
-      font-size: 22px;
-    }
+    gap:var(--grid-gap)
+  }
+  .grid__item{
+    background-color: var(--primary-color);
+  padding: var(--grid-padding);
+  border-radius: var(--grid-border-radius);
+  }
     .grid__item:last-child {
       grid-column: auto / auto;
       grid-row: auto / auto;
     }
   }
+
   .button {
       /* overwrites browser defaults and resets the border */
     border: none;
@@ -302,14 +315,15 @@ table{
     /* takes the font from the outer container.
      is this needed as this is explicit for the body elements?*/
   font-family: inherit;
-  background-color: #357b70;
-  color:rgb(255, 230, 0);
+  background-color: var(--selector-background-color);
+  color:var(--secondary-color);
   text-decoration: none;
+  text-align: center;
   padding: 10px;
   margin:5px;
   border-radius: 50px;
   /* width of the border, type, color */
-  border-bottom: 3px solid #000000;
+  border-bottom: 3px solid var(--nav-change-background);
   /* can combine 
   transition-duration: 1.5s;
   transition-property: opacity;*/
@@ -317,25 +331,29 @@ table{
   -o-transition: 1.5s opacity;
   transition: 1.5s opacity;
 }
-  .button:hover {
-   /* lets the mouse appear as a hand when hovering over the button */
-   cursor: pointer;
-   /* reduces the opacity of the button to 80% colours purple*/
-   background-color: purple;
-   opacity: 0.5;
-  }
+  .button:hover,
   .button:focus {
    /* lets the mouse appear as a hand when hovering over the button */
    cursor: pointer;
    /* reduces the opacity of the button to 80% colours purple*/
-   background-color: purple;
+   background-color: var(--button-colour-change);
    opacity: 0.5;
   }
- 
+ h4{
+  margin-left: 10px;
+  margin-bottom: -15px;
+text-decoration:underline;
+
+ }
+ #about-content{
+  text-align: left;
+  margin-left: 10px;
+ }
   .about-list{
-    list-style: none;
-    text-align: center;
-     padding: 10px;
+    list-style:square;
+    text-align: left;
+     margin-left: 10px;
+    
   }
   .button{
    position:relative;
@@ -354,13 +372,13 @@ table{
       fill: #f76414;
     }*/
     0% {
-      fill: #edc655;
+      fill: var(--sunrise-one);
     }
     50% {
-      fill: #fcffad;
+      fill: var(--sunrise-two);
     }
     100% {
-      fill: #f76414;
+      fill: var(--sunrise-three);
     }
   }
   @keyframes color-change {
@@ -372,13 +390,13 @@ table{
       fill: #f76414;
     }*/
     0% {
-      fill: #edc655;
+      fill: var(--sunrise-one);
     }
     50% {
-      fill: #fcffad;
+      fill: var(--sunrise-two);
     }
     100% {
-      fill: #f76414;
+      fill: var(--sunrise-three);
     }
   }
   .sun{
