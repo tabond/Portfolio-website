@@ -46,7 +46,7 @@ h1 {
     
   a:visited {
     /*colour link changes too after clicking*/
-    color: var(--selector-background-color);
+    color:#000000;
   }
   
 /*how to change the position of elements use top and direction*/

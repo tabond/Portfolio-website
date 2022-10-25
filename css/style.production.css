@@ -22,8 +22,6 @@
 }
 body{
     background: var(--primary-color);
-    /*background-image: linear-gradient(rgb(133, 141, 139), rgb(24,196,149));*/
-    /*background-image: conic-gradient(rgb(194, 127, 4),rgb(2, 223, 25), rgb(213, 3, 213));*/
     font-family: 'Silkscreen', cursive;
   font-weight: 400;
   font-size: 16px;
@@ -49,7 +47,7 @@ h1 {
     
   a:visited {
     /*colour link changes too after clicking*/
-    color: var(--selector-background-color);
+    color:#000000;
   }
   
 /*how to change the position of elements use top and direction*/
